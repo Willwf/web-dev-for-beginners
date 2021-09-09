@@ -13,6 +13,28 @@ dragElement(document.getElementById("plant12"));
 dragElement(document.getElementById("plant13"));
 dragElement(document.getElementById("plant14"));
 
+bringPlantToTheFront(document.getElementById("plant1"));
+bringPlantToTheFront(document.getElementById("plant2"));
+bringPlantToTheFront(document.getElementById("plant3"));
+bringPlantToTheFront(document.getElementById("plant4"));
+bringPlantToTheFront(document.getElementById("plant5"));
+bringPlantToTheFront(document.getElementById("plant6"));
+bringPlantToTheFront(document.getElementById("plant7"));
+bringPlantToTheFront(document.getElementById("plant8"));
+bringPlantToTheFront(document.getElementById("plant9"));
+bringPlantToTheFront(document.getElementById("plant10"));
+bringPlantToTheFront(document.getElementById("plant11"));
+bringPlantToTheFront(document.getElementById("plant12"));
+bringPlantToTheFront(document.getElementById("plant13"));
+bringPlantToTheFront(document.getElementById("plant14"));
+
+const plants = document.querySelectorAll(".plant");
+// const plantsArray = [];
+
+// plants.forEach((plant) => {
+//   return plantsArray.push(plant.id);
+// });
+
 function dragElement(terrariumElement) {
   //set 4 positions for positioning on the screen
   let pos1 = 0,
@@ -23,7 +45,7 @@ function dragElement(terrariumElement) {
 
   function pointerDrag(e) {
     e.preventDefault();
-    console.log(e);
+    // console.log(e);
     pos3 = e.clientX;
     pos4 = e.clientY;
 
@@ -36,7 +58,7 @@ function dragElement(terrariumElement) {
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    console.log(pos1, pos2, pos3, pos4);
+    // console.log(pos1, pos2, pos3, pos4);
     terrariumElement.style.top = terrariumElement.offsetTop - pos2 + "px";
     terrariumElement.style.left = terrariumElement.offsetLeft - pos1 + "px";
   }
@@ -44,5 +66,18 @@ function dragElement(terrariumElement) {
   function stopElementDrag() {
     document.onpointerup = null;
     document.onpointermove = null;
+  }
+}
+
+function bringPlantToTheFront(terrariumElement) {
+  terrariumElement.ondblclick = risePlant;
+
+  function risePlant(event) {
+    // plantsArray.map((plant) => {
+    //   document.getElementById(plant).style.zIndex = 0;
+    // });
+
+    terrariumElement.style.zIndex = terrariumElement.style.zIndex + 1;
+    return (lastPlantClicked = terrariumElement.id);
   }
 }

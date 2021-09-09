@@ -7,6 +7,12 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: #3a241d;
+  text-align: center;
+  font-size: 1rem;
+}
+
 .container {
   background-color: #eeeeee;
   width: 15%;
@@ -33,7 +39,7 @@ h1 {
   position: absolute;
   max-width: 150%;
   max-height: 150%;
-  z-index: 2;
+  z-index: 0;
 }
 
 .jar-walls {
@@ -45,7 +51,7 @@ h1 {
   bottom: 0.5%;
   left: 20%;
   opacity: 0.5;
-  z-index: 1;
+  z-index: -1;
 }
 
 .jar-top {
@@ -56,7 +62,7 @@ h1 {
   bottom: 80.5%;
   left: 25%;
   opacity: 0.7;
-  z-index: 1;
+  z-index: -1;
 }
 
 .jar-bottom {
@@ -78,7 +84,7 @@ h1 {
   bottom: 1%;
   left: 20%;
   opacity: 0.7;
-  z-index: -1;
+  z-index: -2;
 }
 
 .jar-glossy-short {
