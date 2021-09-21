@@ -21,6 +21,8 @@ const quoteElement = document.getElementById("quote");
 const messageElement = document.getElementById("message");
 const typedValueElement = document.getElementById("typed-value");
 const startButton = document.getElementById("start");
+const modal = document.getElementById("modal");
+const close = document.querySelector("#modal div a");
 
 function handleQuote() {
   // get a quote
@@ -70,6 +72,11 @@ function verifyTypedWords() {
       elapsedTime / 1000
     } seconds.`;
     messageElement.innerText = message;
+    modal.classList.toggle("hide");
+    close.addEventListener("click", () => {
+      modal.classList.add("hide");
+      quoteElement.innerHTML = "";
+    });
     typedValueElement.removeEventListener("input", verifyTypedWords);
     typedValueElement.value = "";
     typedValueElement.setAttribute("readonly", "readonly");
