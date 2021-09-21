@@ -52,6 +52,7 @@ function handleQuote() {
 
   // Start the timer
   startTime = new Date().getTime();
+  typedValueElement.removeAttribute("readonly");
   typedValueElement.addEventListener("input", verifyTypedWords);
 }
 
@@ -70,6 +71,8 @@ function verifyTypedWords() {
     } seconds.`;
     messageElement.innerText = message;
     typedValueElement.removeEventListener("input", verifyTypedWords);
+    typedValueElement.value = "";
+    typedValueElement.setAttribute("readonly", "readonly");
   } else if (typedValue.endsWith(" ") && typedValue.trim() === currentWord) {
     // end of word
     // clear the typedValueElement for the new word
