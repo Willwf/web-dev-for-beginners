@@ -38,6 +38,17 @@ button#start {
   font-size: 1.5rem;
 }
 
+.startWord {
+  font-family: "Roboto", sans-serif;
+  width: 6rem;
+  height: 1.6rem;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #f06969;
+  border-radius: 20px;
+  padding: 0 8px;
+}
+
 #modal.hide {
   opacity: 0;
   visibility: hidden;
